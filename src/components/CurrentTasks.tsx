@@ -1,11 +1,6 @@
+import { useEffect } from "react";
 import TaskCard from "./Task";
 
-interface TaskProps{
-    title:string
-}
-interface Tasks{
-    tasks:TaskProps[]
-}
 const taskers=[
     {
         "title":"Create a TikTok Clone"
@@ -18,6 +13,9 @@ const taskers=[
     }
 ]
 const CurrentTask: React.FC = () =>{
+    useEffect(()=>{
+        
+    },[])
     return(
         <TaskCard
         tasks={taskers}
