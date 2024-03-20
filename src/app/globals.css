@@ -15,7 +15,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+.task-wrapper:hover{
+  .check{
+    display: flex;
+  }
+  
+}
+body{
+  background-color: #fff;
+}
 *{
   box-sizing: border-box;
   padding: 0;
