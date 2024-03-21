@@ -1,25 +1,96 @@
-[debug] [2024-03-21T04:37:52.582Z] ----------------------------------------------------------------------
-[debug] [2024-03-21T04:37:52.585Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colli\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting:github
-[debug] [2024-03-21T04:37:52.586Z] CLI Version:   13.5.1
-[debug] [2024-03-21T04:37:52.586Z] Platform:      win32
-[debug] [2024-03-21T04:37:52.586Z] Node Version:  v20.10.0
-[debug] [2024-03-21T04:37:52.586Z] Time:          Thu Mar 21 2024 07:37:52 GMT+0300 (East Africa Time)
-[debug] [2024-03-21T04:37:52.586Z] ----------------------------------------------------------------------
+[debug] [2024-03-21T04:50:31.307Z] ----------------------------------------------------------------------
+[debug] [2024-03-21T04:50:31.311Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\colli\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-21T04:50:31.311Z] CLI Version:   13.5.1
+[debug] [2024-03-21T04:50:31.312Z] Platform:      win32
+[debug] [2024-03-21T04:50:31.312Z] Node Version:  v20.10.0
+[debug] [2024-03-21T04:50:31.312Z] Time:          Thu Mar 21 2024 07:50:31 GMT+0300 (East Africa Time)
+[debug] [2024-03-21T04:50:31.312Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-03-21T04:37:52.679Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-03-21T04:37:52.680Z] > authorizing via signed-in user (collinsdawns184@gmail.com)
+[debug] [2024-03-21T04:50:31.437Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-21T04:50:31.438Z] > authorizing via signed-in user (collinsdawns184@gmail.com)
+[debug] [2024-03-21T04:50:31.438Z] [iam] checking project todo-ce366 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2024-03-21T04:50:31.441Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-ce366:testIamPermissions [none]
+[debug] [2024-03-21T04:50:31.441Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-ce366:testIamPermissions x-goog-quota-user=projects/todo-ce366
+[debug] [2024-03-21T04:50:31.442Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-ce366:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2024-03-21T04:50:33.371Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-ce366:testIamPermissions 200
+[debug] [2024-03-21T04:50:33.371Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-ce366:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2024-03-21T04:50:33.373Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-ce366 [none]
+[debug] [2024-03-21T04:50:34.534Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-ce366 200
+[debug] [2024-03-21T04:50:34.534Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-ce366 {"projectId":"todo-ce366","projectNumber":"187404995492","displayName":"todo","name":"projects/todo-ce366","resources":{"hostingSite":"todo-ce366","realtimeDatabaseInstance":"todo-ce366-default-rtdb"},"state":"ACTIVE","etag":"1_6b3ffece-f5b0-46cb-9380-f4fede6a5fcf"}
+[debug] [2024-03-21T04:50:34.534Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-ce366 [none]
+[debug] [2024-03-21T04:50:34.899Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-ce366 200
+[debug] [2024-03-21T04:50:34.899Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-ce366 {"projectId":"todo-ce366","projectNumber":"187404995492","displayName":"todo","name":"projects/todo-ce366","resources":{"hostingSite":"todo-ce366","realtimeDatabaseInstance":"todo-ce366-default-rtdb"},"state":"ACTIVE","etag":"1_6b3ffece-f5b0-46cb-9380-f4fede6a5fcf"}
+[debug] [2024-03-21T04:50:41.306Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/todo-ce366/sites pageToken=&pageSize=10
+[debug] [2024-03-21T04:50:46.689Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/todo-ce366/sites 200
+[debug] [2024-03-21T04:50:46.689Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/todo-ce366/sites {"sites":[{"name":"projects/todo-ce366/sites/todo-ce366","defaultUrl":"https://todo-ce366.web.app","appId":"1:187404995492:web:3d532cce879c520e8a4f31","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-21T04:50:46.689Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:187404995492:web:3d532cce879c520e8a4f31/config [none]
+[debug] [2024-03-21T04:50:47.883Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:187404995492:web:3d532cce879c520e8a4f31/config 200
+[debug] [2024-03-21T04:50:47.884Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:187404995492:web:3d532cce879c520e8a4f31/config {"projectId":"todo-ce366","appId":"1:187404995492:web:3d532cce879c520e8a4f31","databaseURL":"https://todo-ce366-default-rtdb.firebaseio.com","storageBucket":"todo-ce366.appspot.com","apiKey":"AIzaSyC6SYl0boK8U2_cV9BkkXS1ELtMWTz6Zv4","authDomain":"todo-ce366.firebaseapp.com","messagingSenderId":"187404995492","measurementId":"G-WQ00139NJ3"}
 [info] 
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
 
-You're about to initialize a Firebase project in this directory:
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
 
-  C:\Users\colli
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-Before we get started, keep in mind:
+[debug] [2024-03-21T04:50:58.826Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/todo-ce366/sites/todo-ce366 [none]
+[debug] [2024-03-21T04:51:01.711Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/todo-ce366/sites/todo-ce366 200
+[debug] [2024-03-21T04:51:01.711Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/todo-ce366/sites/todo-ce366 {"name":"projects/todo-ce366/sites/todo-ce366","defaultUrl":"https://todo-ce366.web.app","appId":"1:187404995492:web:3d532cce879c520e8a4f31","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.1.0
 
-  * You are initializing within an existing Firebase project directory
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./app/departments/components/DepartmentLeadershipCard.tsx
+18:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/departments/[id]/page.tsx
+61:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/leadership/page.tsx
+383:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+404:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/login/page.tsx
+11:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/media/page.tsx
+32:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+49:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+66:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+83:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+100:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+117:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/page.tsx
+71:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+79:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+87:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+142:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+151:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/register/page.tsx
+11:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/Footer.tsx
+12:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/Mantainance.tsx
+23:7  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./components/Navbar.tsx
+23:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+88:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
 
