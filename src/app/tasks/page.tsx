@@ -70,7 +70,6 @@ const School: React.FC = () =>{
             {taskData && taskData.map((data, index)=>(
                 <div key={index} className="w-full flex flex-col">
                     <div className="flex flex-col w-full">
-                        
                         <div className="w-full flex flex-col items-center gap-[20px]">
                             <div className="task-wrapper w-1/2 flex flex-row p-2 rounded-lg cursor-pointer transition duration-300 ease-in shadow-sm shadow-[#9BECE1] items-center justify-center hover:bg-[#9BECE1] max-[500px]:w-3/4" style={{fontFamily:'Afacad'}}>
                                 <div className="mr-[auto] flex flex-col w-full">
