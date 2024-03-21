@@ -11,13 +11,14 @@ const School: React.FC = () =>{
     const [currentDate, setCurrentDate] = useState("");
     const tasksRef = collection(db, "school");
     const [isLoading, setIsLoading] = useState(true);
-    const where_to = new URL(window.location.href).searchParams.get("where");
+    const [whereTo, setWhereTo] = useState<any>("");
     
-    const q = query(tasksRef, where(`where`,"==",`${where_to}`));
     async function fetchAll(){
+        const where_to = new URL(window.location.href).searchParams.get("where");
+        setWhereTo(where_to);
+        const q = query(tasksRef, where(`where`,"==",`${where_to}`));
         const querySnapshot = await getDocs(q);
         const newData = querySnapshot.docs.map(doc=>doc.data());
-        console.log("NEW: ",newData);
         setTaskData(newData.toReversed());
         setIsLoading(false);
         if(newData.length!==0){
@@ -56,7 +57,7 @@ const School: React.FC = () =>{
                     {currentDate && <h2 className="text-[#8e918f] text-[.9em] font-['Poppins']">{currentDate}</h2>}
                 </div>}
                 {taskData && <div className="ml-[auto] pr-[50px] absolute w-full flex flex-col">
-                    <Link href={`/add?where=${where_to}`} className="ml-[auto] drop-shadow-lg drop-shadow-[#02886F] cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20"><path fill="#02886F" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20"/></svg></Link>
+                    <Link href={`/add?where=${whereTo}`} className="ml-[auto] drop-shadow-lg drop-shadow-[#02886F] cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20"><path fill="#02886F" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20"/></svg></Link>
                 </div>}
                 <div className="mt-[10px] w-1/2">
                     <h2 className="text-[1.2em] font-semilight w-full">Pending</h2>
@@ -66,12 +67,12 @@ const School: React.FC = () =>{
                 <div className="lds-ripple"><div></div><div></div></div>
             </div>}
             {taskData && taskData.map((data, index)=>(
-                <div className="w-full flex flex-col">
+                <div key={index} className="w-full flex flex-col">
                     <div className="flex flex-col w-full">
                         <div className="flex flex-row justify-center items-center w-full">
                         </div>
                         <div className="w-full flex flex-col items-center gap-[20px]">
-                            <div key={index} className="task-wrapper w-1/2 flex flex-row p-2 rounded-lg cursor-pointer transition duration-300 ease-in shadow-sm shadow-[#9BECE1] items-center justify-center hover:bg-[#9BECE1]" style={{fontFamily:'Afacad'}}>
+                            <div className="task-wrapper w-1/2 flex flex-row p-2 rounded-lg cursor-pointer transition duration-300 ease-in shadow-sm shadow-[#9BECE1] items-center justify-center hover:bg-[#9BECE1]" style={{fontFamily:'Afacad'}}>
                                 <div className="mr-[auto] flex flex-col w-full">
                                     <div className="flex flex-row">
                                         <h1 className="text-[1.2em] font-['Poppins']" >{data.title}</h1>
@@ -93,7 +94,7 @@ const School: React.FC = () =>{
                 <img src="/images/404.svg" className="w-1/4 h-1/4"/>
                 <div className="flex flex-col gap-[10px] items-center mt-[50px] w-full justify-center">
                     <p className="font-['Poppins']">No Tasks Found</p>
-                    <Link href={`/add?where=${where_to}`} className="p-2 bg-[#4DAB9A] rounded-[10px] w-[150px] items-center flex flex-col transition duration-300  text-[#fff] ease-in hover:bg-[#02886F] hover:shadow-md hover:shadow-[#8e918f]">Add Task</Link>
+                    <Link href={`/add?where=${whereTo}`} className="p-2 bg-[#4DAB9A] rounded-[10px] w-[150px] items-center flex flex-col transition duration-300  text-[#fff] ease-in hover:bg-[#02886F] hover:shadow-md hover:shadow-[#8e918f]">Add Task</Link>
                 </div>
                 </div>}
         </div>

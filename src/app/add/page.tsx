@@ -15,10 +15,10 @@ const Add: React.FC = () =>{
     const [description, setDescription] = useState("");
     const [task, setTask] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const url = window.location.href;
-    const where = new URL(url).searchParams.get("where");
-    
+        
     async function addTask(){
+        const url = window.location.href;
+        const where = new URL(url).searchParams.get("where");
         setIsLoading(true);
         if(description!=="" && title!==""){
             await setDoc(docRef,{
