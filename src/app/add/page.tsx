@@ -45,17 +45,17 @@ const Add: React.FC = () =>{
    return(
         <div className="w-full flex flex-col items-center justify-center min-h-[60vh]">
             <div className="w-3/4 flex flex-col items-center justify-center">
-                <div className="w-1/2 flex flex-col p-3">
+                <div className="w-1/2 flex flex-col p-3 max-[500px]:w-full">
                     <span className="font-['Poppins']">Enter title:</span>
                     <input onChange={handleTitleChange} className="font-['Poppins'] outline-none border-[1px] border-[#eee] w-full p-2 rounded-[6px] text-[.9em] hover:shadow-lg" placeholder="task"/>
                     <div className="border rounded-lg"></div>
                 </div>
-                <div className="w-1/2 flex flex-col p-3">
+                <div className="w-1/2 flex flex-col p-3 max-[500px]:w-full">
                     <span className="font-['Poppins']">Enter description:</span>
                     <input onChange={handleDescrpitonChange} className="description font-['Poppins'] outline-none border-[1px] border-[#eee] w-full p-2 rounded-[6px] text-[.9em] hover:shadow-lg" placeholder="description"/>
                     <div className="border rounded-lg"></div>
                 </div>
-                <div className="w-1/2 p-3">
+                <div className="w-1/2 p-3 max-[500px]:w-full">
                     <button className="w-1/2 bg-[#02886F] font-['Poppins'] p-1 rounded-[6px] transition duration-300 text-[#fff] shadow-[#02886F] shadow-md ease-in font-semibold hover:bg-[#4dab9a]" onClick={addTask}>ADD</button>
                 </div>
                 {isLoading && <div className="w-1/4 flex flex-col mt-[50px]">

@@ -97,6 +97,7 @@ input:focus + .border, .expand:focus .border {
   transform: scaleX(1);
 }
 
+
 *{
   box-sizing: border-box;
   padding: 0;

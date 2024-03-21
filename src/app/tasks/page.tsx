@@ -52,15 +52,16 @@ const School: React.FC = () =>{
     return(
         <div className="w-full flex flex-col items-center gap-[20px]">
             <div className={noTasks ? "hidden": "flex flex-col w-full items-center"}>
+                {taskData && <div className="ml-[auto] pr-[50px] absolute w-full flex flex-col max-[500px]:mt-[-35px]">
+                    <Link href={`/add?where=${whereTo}`} className="ml-[auto] drop-shadow-lg drop-shadow-[#02886F] cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20"><path fill="#02886F" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20"/></svg></Link>
+                </div>}
                 {<div className={"flex flex-col items-center justify-center w-full"}>
                     <h1 className="text-[1.5em] font-semilight font-['Poppins']">Welcome Back, Collins</h1>
                     {currentDate && <h2 className="text-[#8e918f] text-[.9em] font-['Poppins']">{currentDate}</h2>}
                 </div>}
-                {taskData && <div className="ml-[auto] pr-[50px] absolute w-full flex flex-col">
-                    <Link href={`/add?where=${whereTo}`} className="ml-[auto] drop-shadow-lg drop-shadow-[#02886F] cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 20 20"><path fill="#02886F" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20"/></svg></Link>
-                </div>}
-                <div className="mt-[10px] w-1/2">
-                    <h2 className="text-[1.2em] font-semilight w-full">Pending</h2>
+                
+                <div className="mt-[10px] w-1/2 border-b-[1px] border-[lightgray] max-[500px]:w-3/4">
+                    <h2 className="text-[1.2em] font-semilight text-[#555] w-full max-[500px]:text-[1em]">Pending</h2>
                 </div>          
             </div>
             {isLoading &&<div id="loader" className="fixed top-0 left-0 h-[100vh] w-full bg-[#fff] flex flex-col items-center justify-center">
@@ -69,21 +70,19 @@ const School: React.FC = () =>{
             {taskData && taskData.map((data, index)=>(
                 <div key={index} className="w-full flex flex-col">
                     <div className="flex flex-col w-full">
-                        <div className="flex flex-row justify-center items-center w-full">
-                        </div>
+                        
                         <div className="w-full flex flex-col items-center gap-[20px]">
-                            <div className="task-wrapper w-1/2 flex flex-row p-2 rounded-lg cursor-pointer transition duration-300 ease-in shadow-sm shadow-[#9BECE1] items-center justify-center hover:bg-[#9BECE1]" style={{fontFamily:'Afacad'}}>
+                            <div className="task-wrapper w-1/2 flex flex-row p-2 rounded-lg cursor-pointer transition duration-300 ease-in shadow-sm shadow-[#9BECE1] items-center justify-center hover:bg-[#9BECE1] max-[500px]:w-3/4" style={{fontFamily:'Afacad'}}>
                                 <div className="mr-[auto] flex flex-col w-full">
-                                    <div className="flex flex-row">
-                                        <h1 className="text-[1.2em] font-['Poppins']" >{data.title}</h1>
-                                        <span className="text-[.7em] ml-[auto] text-[#999] font-['Poppins']">{data.id}</span>
+                                    <div className="flex flex-row ">
+                                        <h1 className="text-[1.2em] font-['Poppins'] w-full max-[500px]:text-[.9em]" >{data.title}</h1>
                                     </div>
-                                    <div className="flex flex-row items-center p-1">
-                                        <p className="text-[.8em] text-[#CECECE] font-['Poppins']">{data.description}</p>
-                                        <div className="ml-[auto] check hidden">
-                                            <button onClick={()=>removeTask(data.id)}><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 15 15"><path fill="#BA0021" fill-rule="evenodd" d="M0 7.5a7.5 7.5 0 1 1 15 0a7.5 7.5 0 0 1-15 0m7.072 3.21l4.318-5.398l-.78-.624l-3.682 4.601L4.32 7.116l-.64.768z" clip-rule="evenodd"/></svg></button>
-                                        </div>
+                                    <div className="flex flex-row items-center pt-1">
+                                        <p className="text-[.8em] text-[#555] font-['Poppins']">{data.description}</p>
                                     </div>
+                                </div>
+                                <div className="ml-[auto] check hidden">
+                                    <button onClick={()=>removeTask(data.id)} className="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 15 15"><path fill="#BA0021" fill-rule="evenodd" d="M0 7.5a7.5 7.5 0 1 1 15 0a7.5 7.5 0 0 1-15 0m7.072 3.21l4.318-5.398l-.78-.624l-3.682 4.601L4.32 7.116l-.64.768z" clip-rule="evenodd"/></svg></button>
                                 </div>
                             </div>
                         </div>
