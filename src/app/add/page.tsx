@@ -15,6 +15,8 @@ const Add: React.FC = () =>{
     const [description, setDescription] = useState("");
     const [task, setTask] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const url = window.location.href;
+    const where = new URL(url).searchParams.get("where");
     
     async function addTask(){
         setIsLoading(true);
@@ -23,10 +25,11 @@ const Add: React.FC = () =>{
                 title:title,
                 category:"school",
                 description:description,
-                school: true,
+                where: where,
                 id: GlobalID,
+                pending: true
             });
-            window.location.href="/school";
+            window.location.href=`/tasks?where=${where}`;
         }
     }
 
